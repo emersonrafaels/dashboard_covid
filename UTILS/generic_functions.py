@@ -127,7 +127,6 @@ def get_files_directory(
                 if not isinstance(format_types_accepted, tuple):
                     format_types_accepted = tuple(format_types_accepted)
 
-
                 list_files = [
                     arq
                     for arq in list_files
@@ -136,7 +135,6 @@ def get_files_directory(
 
         else:
             list_files = [directory]
-
 
     except Exception as ex:
         print("ERRO NA FUNÇÃO {} - {]".format(stack()[0][3], ex))

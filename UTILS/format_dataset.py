@@ -10,8 +10,9 @@ dir_data = get_absolute_path("DATA_DOWNLOAD")
 format_type_data = [".csv", ".xlsx"]
 
 # OBTENDO TODOS OS DATASETS (BASES DISPONÍVEIS)
-list_files_data = get_files_directory(directory=dir_data,
-                                      format_types_accepted=format_type_data)
+list_files_data = get_files_directory(
+    directory=dir_data, format_types_accepted=format_type_data
+)
 
 # INICIANDO OS DATAFRAMES QUE ARMAZENARÃO OS RESULTADOS
 df_country = df_state = df_aux = pd.DataFrame()
@@ -30,9 +31,11 @@ for file in list_files_data:
 
 # EXPORTANDO AS BASES FINAIS
 dir_save = get_absolute_path("DATA")
-df_country.to_csv(os.path.join(dir_save, "HIST_PAINEL_COVIDBR_BRAZIL_COUNTRY.csv"),
-                  index=None)
-df_state.to_csv(os.path.join(dir_save, "HIST_PAINEL_COVIDBR_BRAZIL_STATES.csv"),
-                index=None)
+df_country.to_csv(
+    os.path.join(dir_save, "HIST_PAINEL_COVIDBR_BRAZIL_COUNTRY.csv"), index=None
+)
+df_state.to_csv(
+    os.path.join(dir_save, "HIST_PAINEL_COVIDBR_BRAZIL_STATES.csv"), index=None
+)
 
 print("BASES SALVAS COM SUCESSO")
